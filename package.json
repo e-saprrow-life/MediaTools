@@ -1,0 +1,25 @@
+{
+    "name": "Sparrow: GULP LT",
+    "version": "2.0.0",
+    "description": "Start Build 13-10-2022",
+    "main": "gulpfile.js",
+    "type": "module",
+    "scripts": {
+        "start": "gulp start",
+        "heic2jpg": "gulp heic2jpg",
+        "webp": "gulp webp"
+    },
+    "author": "Yevhenii Vorobei (Sparrow)",
+    "license": "ISC",
+    "devDependencies": {
+        "del": "^7.0.0",
+        "gulp": "^4.0.2",
+        "gulp-cli": "^2.3.0",
+        "gulp-image": "^6.3.1",
+        "gulp-newer": "^1.4.0"
+    },
+    "dependencies": {
+        "gulp-webp": "^5.0.0",
+        "heic-convert": "^2.1.0"
+    }
+}
