@@ -5,9 +5,9 @@
     "main": "gulpfile.js",
     "type": "module",
     "scripts": {
-        "start": "gulp start",
-        "heic2jpg": "gulp heic2jpg",
-        "webp": "gulp webp"
+        "opt": "gulp optimize_task",
+        "heic2jpg": "gulp heic_task",
+        "webp": "gulp webp_task"
     },
     "author": "Yevhenii Vorobei (Sparrow)",
     "license": "ISC",

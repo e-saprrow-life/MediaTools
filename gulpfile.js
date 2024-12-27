@@ -17,7 +17,7 @@ const folder = {
 }
 
 
-async function heic2jpg_converter() {
+async function convert_heic_to_jpg() {
     const inputFolder = folder.src;
   
     try {
@@ -55,7 +55,7 @@ async function heic2jpg_converter() {
 }
   
 
-const optimization = () => {
+const optimize = () => {
     // deleteAsync(`${path.output}/**/*.*`)
     return gulp.src(`${folder.src}/**/*.*` )
     .pipe(newer(folder.output))
@@ -64,15 +64,16 @@ const optimization = () => {
 }
 
 
-const webp_converter = () => {
+const convert_to_webp = () => {
     // deleteAsync(`${path.webp}/**/*.*`)
     return gulp.src(`${folder.src}/**/*.*` )
-    .pipe(newer(folder.webp))
+    .pipe(newer(folder.output))
     .pipe(webpConverter({ // Параметры: https://github.com/imagemin/imagemin-webp#imageminwebpoptions
-        quality: 90,
+        quality: 85,
         method: 4
     }))
-    .pipe(gulp.dest(folder.webp))
+    // .pipe(gulp.dest(folder.webp))
+    .pipe(gulp.dest(folder.output))
 }
 
 // const clearSRC = async () => {
@@ -81,6 +82,6 @@ const webp_converter = () => {
 // } 
 
 
-export const start = gulp.series(optimization);
-export const heic2jpg = gulp.series(heic2jpg_converter);
-export const webp = gulp.series(webp_converter);
+export const optimize_task = gulp.series(optimize);
+export const heic_task = gulp.series(convert_heic_to_jpg);
+export const webp_task = gulp.series(convert_to_webp);
