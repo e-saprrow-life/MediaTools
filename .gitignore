@@ -1,2 +1,4 @@
 node_modules
 desktop.ini
+output/*
+src/*

@@ -1,0 +1,29 @@
+{
+    "actionButtons": {
+        "commands": [
+            {
+                "name": "image2webp",
+                "singleInstance": false,
+                "command": "npm run webp"
+            },
+            {
+                "name": "optimize image",
+                "singleInstance": false,
+                "command": "npm run o-image"
+            },
+            {
+                "name": "heic2jpg",
+                "singleInstance": false,
+                "command": "npm run heic2jpg"
+            },
+            {
+                "name": "convert video",
+                "singleInstance": false,
+                "command": "npm run o-video"
+            },
+        ],
+        "defaultColor": "#03fc17",
+        "reloadButton": "↻",
+        "loadNpmCommands": false
+    }
+}
