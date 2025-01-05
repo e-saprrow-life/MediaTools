@@ -12,7 +12,6 @@ import webpConverter from 'gulp-webp';
 const folder = {
     src: './src',
     output: './output',
-    heic2jpg: './heic2jpg',
     webp: './webp'
 }
 
@@ -31,7 +30,7 @@ async function convert_heic_to_jpg() {
       for (const heicFile of heicFiles) {
         const inputPath = path.join(inputFolder, heicFile);
         const outputFileName = path.basename(heicFile, path.extname(heicFile)) + '.jpg';
-        const outputPath = path.join(folder.heic2jpg, outputFileName);
+        const outputPath = path.join(folder.output, outputFileName);
   
         // Чтение HEIC файла
         const inputBuffer = await fs.readFile(inputPath);
@@ -49,6 +48,7 @@ async function convert_heic_to_jpg() {
       }
   
       console.log('Конвертация завершена.');
+      deleteAsync(`${path.src}/**/*.*`)
     } catch (error) {
       console.error('Ошибка при конвертации:', error);
     }
@@ -72,7 +72,6 @@ const convert_to_webp = () => {
         quality: 85,
         method: 4
     }))
-    // .pipe(gulp.dest(folder.webp))
     .pipe(gulp.dest(folder.output))
 }
 
