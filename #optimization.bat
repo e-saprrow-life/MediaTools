@@ -1,1 +1,1 @@
-npm run opt
+npm run o-images

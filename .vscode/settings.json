@@ -9,7 +9,7 @@
             {
                 "name": "optimize image",
                 "singleInstance": false,
-                "command": "npm run o-image"
+                "command": "npm run o-images"
             },
             {
                 "name": "heic2jpg",

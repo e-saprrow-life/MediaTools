@@ -5,7 +5,7 @@
     "main": "gulpfile.js",
     "type": "module",
     "scripts": {
-        "o-imames": "gulp optimize_images_task",
+        "o-images": "gulp optimize_images_task",
         "o-video": "gulp optimize_video_task",
         "heic2jpg": "gulp heic_task",
         "webp": "gulp webp_task"
