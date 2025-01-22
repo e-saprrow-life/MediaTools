@@ -5,10 +5,11 @@
     "main": "gulpfile.js",
     "type": "module",
     "scripts": {
-        "o-images": "gulp optimize_images_task",
-        "o-video": "gulp optimize_video_task",
-        "heic2jpg": "gulp heic_task",
-        "webp": "gulp webp_task"
+        "img": "gulp min_images",
+        "mp4": "gulp convert_to_mp4",
+        "heic": "gulp convert_heic_to_jpg",
+        "webp": "gulp convert_to_webp",
+        "webm": "gulp convert_to_webm"
     },
     "author": "Yevhenii Vorobei (Sparrow)",
     "license": "ISC",

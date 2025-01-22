@@ -2,24 +2,29 @@
     "actionButtons": {
         "commands": [
             {
-                "name": "image2webp",
+                "name": "convert to webp",
                 "singleInstance": false,
                 "command": "npm run webp"
             },
             {
-                "name": "optimize image",
+                "name": "optimize images",
                 "singleInstance": false,
-                "command": "npm run o-images"
+                "command": "npm run img"
             },
             {
-                "name": "heic2jpg",
+                "name": "convert heic to jpg",
                 "singleInstance": false,
-                "command": "npm run heic2jpg"
+                "command": "npm run heic"
             },
             {
-                "name": "convert video",
+                "name": "convert to mp4",
                 "singleInstance": false,
-                "command": "npm run o-video"
+                "command": "npm run mp4"
+            },
+            {
+                "name": "convert to webm",
+                "singleInstance": false,
+                "command": "npm run webm"
             },
         ],
         "defaultColor": "#03fc17",
