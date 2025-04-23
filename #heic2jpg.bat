@@ -1,1 +1,0 @@
-npm run heic2jpg

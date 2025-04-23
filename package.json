@@ -9,7 +9,9 @@
         "mp4": "gulp convert_to_mp4",
         "heic": "gulp convert_heic_to_jpg",
         "webp": "gulp convert_to_webp",
-        "webm": "gulp convert_to_webm"
+        "webm": "gulp convert_to_webm",
+        "lottie": "gulp convert_lottie_to_svg",
+        "min": "gulp min_images"
     },
     "author": "Yevhenii Vorobei (Sparrow)",
     "license": "ISC",
@@ -23,6 +25,7 @@
     "dependencies": {
         "fluent-ffmpeg": "^2.1.3",
         "gulp-webp": "^5.0.0",
-        "heic-convert": "^2.1.0"
+        "heic-convert": "^2.1.0",
+        "lottie-to-svg": "^1.1.0"
     }
 }

@@ -26,6 +26,11 @@
                 "singleInstance": false,
                 "command": "npm run webm"
             },
+            {
+                "name": "convert lottie to svg",
+                "singleInstance": false,
+                "command": "npm run lottie"
+            },
         ],
         "defaultColor": "#03fc17",
         "reloadButton": "↻",
