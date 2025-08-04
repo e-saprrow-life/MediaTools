@@ -16,16 +16,17 @@
     "author": "Yevhenii Vorobei (Sparrow)",
     "license": "ISC",
     "devDependencies": {
-        "del": "latest",
-        "gulp": "latest",
-        "gulp-cli": "latest",
-        "gulp-image": "latest",
-        "gulp-newer": "latest"
+        "del": "^7.0.0",
+        "gulp": "^4.0.2",
+        "gulp-cli": "^2.3.0",
+        "gulp-image": "^6.3.1",
+        "gulp-newer": "^1.4.0"
     },
     "dependencies": {
-        "@ffmpeg-installer/ffmpeg": "latest",
-        "fluent-ffmpeg": "latest",
-        "gulp-webp": "latest",
-        "heic-convert": "latest"
+        "@ffmpeg-installer/ffmpeg": "^1.1.0",
+        "fluent-ffmpeg": "^2.1.3",
+        "gulp-webp": "^5.0.0",
+        "heic-convert": "^2.1.0",
+        "lottie-to-svg": "^1.1.0"
     }
 }

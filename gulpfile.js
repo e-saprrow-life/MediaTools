@@ -7,7 +7,7 @@ import newer from 'gulp-newer';
 import image from 'gulp-image';
 import convert from'heic-convert';
 import webpConverter from 'gulp-webp';
-import renderSvg from "lottie-to-svg";
+// import renderSvg from "lottie-to-svg";
 
 import ffmpeg from 'fluent-ffmpeg';
 import ffmpegInstaller from '@ffmpeg-installer/ffmpeg';
@@ -26,7 +26,6 @@ const getCurrentTime = () => {
     const now = new Date();
     return now.toLocaleTimeString('en-GB', { hour12: false });
 };
-
 
 async function heic_to_jpg() { 
     try {
@@ -62,16 +61,12 @@ async function heic_to_jpg() {
     }
 }
   
-
-
 const optimize_images = () => {
     return gulp.src(`${root.src}/**/*.*` )
     .pipe(newer(root.output))
     .pipe(image())
     .pipe(gulp.dest(root.output))
 }
-
-
 
 const to_webp = () => {
     return gulp.src(`${root.src}/**/*.*` )
@@ -102,7 +97,7 @@ const to_mp4 = async () => {
                     // Common
                     '-preset medium', // Впливає на швидкість і якість конвертації - ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow
                     // '-f mp4', // Формат вихідного файлу - Приклади: mp4, mkv, avi
-
+                    '-movflags +faststart', // переміщує moov atom (метадані MP4) на початок файлу, що потрібно для стрімінгу і відтворення на мобільних пристроях
                     // Video
                     '-crf 28',         // якість відео (зазвичай для кодека libx264) Діапазон: 0 (максимальна якість, без втрат) до 51 (мінімальна якість). Рекомендоване значення: 18-28.
                     '-c:v libx264',    //  Відеокодек - Приклади: libx264, libx265, vp9.
@@ -174,7 +169,7 @@ const to_webm = async () => {
                     '-c:v libvpx-vp9',  // Кодек VP9 для WebM [libvpx, libvpx-vp9]
                     '-crf 28',          // Оптимальна якість, регулюється 0-63 (менше = краща якість)
                     '-b:v 1M',          // Бітрейт відео 1Мбіт/с
-                    // '-s 1920x1080',     // Розмір відео
+                    '-s 1920x1080',     // Розмір відео
                     // '-s 1080x1920',     // Розмір відео
 
                     // Audio
@@ -211,29 +206,29 @@ const to_webm = async () => {
     }
 }
 
-const lottie_to_svg = async () => {
-    const animationData = JSON.parse(fs_native.readFileSync(root.src + '/anim.json', "utf8"));
+// const lottie_to_svg = async () => {
+//     const animationData = JSON.parse(fs_native.readFileSync(root.src + '/anim.json', "utf8"));
 
-    renderSvg(animationData).then(svg => {
-        fs_native.writeFileSync(root.output + `/anim.svg`, svg, "utf8");
-    });
-    // const source = fs_native.readdir(root.src);
-    // const files = source.filter(file => ['.json'].includes(path.extname(file).toLowerCase()));
+//     renderSvg(animationData).then(svg => {
+//         fs_native.writeFileSync(root.output + `/anim.svg`, svg, "utf8");
+//     });
+//     // const source = fs_native.readdir(root.src);
+//     // const files = source.filter(file => ['.json'].includes(path.extname(file).toLowerCase()));
 
-    // const processFile = async (fileName) => {
-    //     // let path = path.join(root.src, file);
-    //     let path = root.src + '/' + fileName;
-    //     let animationData = JSON.parse(fs.readFileSync(path, "utf8"));
+//     // const processFile = async (fileName) => {
+//     //     // let path = path.join(root.src, file);
+//     //     let path = root.src + '/' + fileName;
+//     //     let animationData = JSON.parse(fs.readFileSync(path, "utf8"));
 
-    //     renderSvg(animationData).then(svg => {
-    //       fs.writeFileSync(fileName + `.svg`, svg, "utf8");
-    //     });        
-    // }
+//     //     renderSvg(animationData).then(svg => {
+//     //       fs.writeFileSync(fileName + `.svg`, svg, "utf8");
+//     //     });        
+//     // }
 
-    // for (const file of files) {
-    //     processFile(file);
-    // }
-}
+//     // for (const file of files) {
+//     //     processFile(file);
+//     // }
+// }
 
 const getFileSize = async (filePath) => {
     try {
@@ -250,4 +245,4 @@ export const convert_to_mp4 = gulp.series(to_mp4);
 export const convert_heic_to_jpg = gulp.series(heic_to_jpg);
 export const convert_to_webp = gulp.series(to_webp);
 export const convert_to_webm = gulp.series(to_webm);
-export const convert_lottie_to_svg = gulp.series(lottie_to_svg);
+// export const convert_lottie_to_svg = gulp.series(lottie_to_svg);
